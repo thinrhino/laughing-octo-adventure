@@ -1,0 +1,47 @@
+---
+title       : Study of Respirable Suspended Particulate Matter(RSPM)
+subtitle    : 
+author      : Aditya Laghate
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+
+--- .class #id 
+
+## What is RSPM
+
+Respirable Suspended Particulate Matter or RSPM are those suspended particles in the air that is 10 micrometers or less.
+
+Since these particulate matter are small enough to be breathed in, they can cause detrimental effects to man. It is said that particulate matter that is 2.5 micrometers or less is harmful as these cannot be expelled from the body and cause long term effects such as lung cancer, allergies, asthma,and other respiratory diseases, some type of birth defects as well as premature death.
+
+--- .class #id 
+
+## Data Source
+
+The data for this app was downloaded from the Indian Govt. open data portal  
+http://data.gov.in/catalog/air-quality-respect-respirable-suspended-particulate-matterrspm-air-quality-stations-under#web_catalog_tabs_block_10
+
+
+--- .class #id 
+
+## Thought behind the app
+
+The idea of the app, was to showcase how the levels of RSPM have changed between 2006 & 2008.
+
+--- .class #id 
+
+## Code example
+
+In the app, I have used the ```aggregate``` function.
+
+```{r echo = TRUE}
+attach(mtcars)
+aggdata <-aggregate(mtcars, by=list(cyl,vs),
+  FUN=mean, na.rm=TRUE)
+print(aggdata)
+detach(mtcars)
+```
